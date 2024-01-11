@@ -1,10 +1,15 @@
 name: Test Runner after push
 
+# on:
+#   pull_request:
+#     types: [opened, synchronize, reopened]
+#     branches:
+#       - "**"
+
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
     branches:
-      - "**"
+      - "main"
 
 jobs:
   test:
