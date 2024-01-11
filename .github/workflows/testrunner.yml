@@ -21,7 +21,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: Display MONGODB_URI
-        run: echo "MONGODB_URI: $MONGODB_URI"
       - run: npm ci  
       - run: npm test
