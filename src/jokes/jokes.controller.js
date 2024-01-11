@@ -60,12 +60,6 @@ export const postJoke = async (req, res) => {
   try {
     const joke = new JokeModel(req.body);
 
-    // // handle category array
-    // let array = joke.category;
-    // let firstElementArray = array[0];
-    // let categoryArray = JSON.parse(firstElementArray);
-    // joke.category = categoryArray;
-
     await joke.save();
     //Confirmation back
     res
