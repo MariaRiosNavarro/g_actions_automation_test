@@ -17,6 +17,7 @@ npm i -D jest supertest
 ```json
 "type": "module",
 "scripts": {
+    "dev": "node --watch server.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose"
 },
 ```

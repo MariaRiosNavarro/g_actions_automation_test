@@ -5,7 +5,7 @@ import {
   postJoke,
   deleteJoke,
   putJoke,
-} from "./horses.controller.js";
+} from "./jokes.controller.js";
 
 export const router = new express.Router();
 

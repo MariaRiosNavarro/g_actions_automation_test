@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "## Setup",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "node --watch server.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose"
   },
   "keywords": [],

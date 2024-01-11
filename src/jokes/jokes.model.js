@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const jokeSchema = new mongoose.Schema({
   text: String,
-  category: Array,
+  category: String,
   language: String,
 });
 
-export const Joke = mongoose.model("Joke", jokeSchema);
+export const JokeModel = mongoose.model("Joke", jokeSchema);

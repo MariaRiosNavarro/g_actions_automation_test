@@ -1,4 +1,4 @@
-import { JokeModel } from "./model.js";
+import { JokeModel } from "./jokes.model.js";
 
 // --------------------------------------------------------------------GET ALL
 
@@ -60,11 +60,11 @@ export const postJoke = async (req, res) => {
   try {
     const joke = new JokeModel(req.body);
 
-    // handle category array
-    let array = joke.category;
-    let firstElementArray = array[0];
-    let categoryArray = JSON.parse(firstElementArray);
-    joke.category = categoryArray;
+    // // handle category array
+    // let array = joke.category;
+    // let firstElementArray = array[0];
+    // let categoryArray = JSON.parse(firstElementArray);
+    // joke.category = categoryArray;
 
     await joke.save();
     //Confirmation back
@@ -96,10 +96,7 @@ export const deleteJoke = async (req, res) => {
     const { id } = req.params;
     await JokeModel.findOneAndDelete({ _id: id });
     //sucess true
-    res.status(204).json({
-      success: true,
-      message: `joke with id= ${id} successfully deleted 🤣`,
-    });
+    res.status(204).end();
   } catch (error) {
     res
       .status(500)
