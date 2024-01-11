@@ -1,11 +1,5 @@
 name: Test Runner after push
 
-# on:
-#   pull_request:
-#     types: [opened, synchronize, reopened]
-#     branches:
-#       - "**"
-
 on:
   push:
     branches:
@@ -18,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [20.x]  
 
     steps:
       - uses: actions/checkout@v3
@@ -27,5 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm i
+      - name: Display MONGODB_URI
+        run: echo "MONGODB_URI: $MONGODB_URI"
+      - run: npm ci  
       - run: npm test
