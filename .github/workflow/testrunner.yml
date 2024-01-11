@@ -9,7 +9,7 @@ name: Test Runner after push
 on:
   push:
     branches:
-      - "main"
+      - "**"
 
 jobs:
   test:
