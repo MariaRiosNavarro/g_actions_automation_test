@@ -22,7 +22,9 @@ describe('Check the Route "/" Get', () => {
   test("I expect a code 500 if I use the Get route incorrectly", async () => {
     // Mock find function to throw an exception
     jest.spyOn(JokeModel, "find").mockImplementationOnce(() => {
-      throw new Error("Simulated error");
+      throw new Error(
+        "✅ NO PANIK 😱 -THIS IS A SIMULATED ERROR FOR THE TEST GET ALL"
+      );
     });
     const response = await request.get("/api/jokes");
     expect(response.statusCode).toBe(500);
@@ -74,7 +76,9 @@ describe('Check the Route "/:id" GetOne', () => {
 
     // Mock the findOne function to throw an exception
     jest.spyOn(JokeModel, "findOne").mockImplementationOnce(() => {
-      throw new Error("Simulated error");
+      throw new Error(
+        "✅ NO PANIK 😱 -THIS IS A SIMULATED ERROR FOR THE TEST GET ONE"
+      );
     });
 
     const response = await request.get(`/api/jokes/${jokeId}`);
@@ -103,7 +107,9 @@ describe('Check the Route "/" POST', () => {
     // Mock find function to throw an exception
     jest.spyOn(JokeModel.prototype, "save").mockImplementationOnce(() => {
       // USE JokeModel.prototyp for "save" in POST
-      throw new Error("Simulated error");
+      throw new Error(
+        "✅ NO PANIK 😱 -THIS IS A SIMULATED ERROR FOR THE TEST POST ONE"
+      );
     });
     const response = await request.post("/api/jokes").send({
       text: "Why did the chicken cross the road?",
@@ -138,7 +144,9 @@ describe('Check the Route "/api/jokes/:id" Delete', () => {
 
     // Mock the findOneAndDelete function to throw an exception
     jest.spyOn(JokeModel, "findOneAndDelete").mockImplementationOnce(() => {
-      throw new Error("Simulated error");
+      throw new Error(
+        "✅ NO PANIK 😱 -THIS IS A SIMULATED ERROR FOR THE TEST DELETE ONE"
+      );
     });
 
     const response = await request.delete(`/api/jokes/${jokeId}`);
